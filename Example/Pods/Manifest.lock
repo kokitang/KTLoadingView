@@ -1,0 +1,16 @@
+PODS:
+  - KTLoadingView (0.1.0)
+
+DEPENDENCIES:
+  - KTLoadingView (from `../`)
+
+EXTERNAL SOURCES:
+  KTLoadingView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  KTLoadingView: 673d85e0e39653bb1e6e361e370d86a869ad0f80
+
+PODFILE CHECKSUM: dcabd23b21b8b299f648278b97fb2875a742f3e2
+
+COCOAPODS: 1.4.0

@@ -1,0 +1,6 @@
+framework module KTLoadingView {
+  umbrella header "KTLoadingView-umbrella.h"
+
+  export *
+  module * { export * }
+}

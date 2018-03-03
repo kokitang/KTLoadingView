@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		20D42DAF7998B5E53A5F8CF3 /* Pods_KTLoadingView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KTLoadingView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		35E37EF088EC646E5E7A38B2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		35E37EF088EC646E5E7A38B2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		39426ECC7E958B790949AA69 /* Pods_KTLoadingView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KTLoadingView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* KTLoadingView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KTLoadingView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,8 +45,8 @@
 		96E479845C2AD17C65115EE9 /* Pods-KTLoadingView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTLoadingView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KTLoadingView_Tests/Pods-KTLoadingView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB141B1158790EC88EC222A7 /* Pods-KTLoadingView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTLoadingView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-KTLoadingView_Example/Pods-KTLoadingView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BE6AD542E52FF2D86DB427B1 /* Pods-KTLoadingView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTLoadingView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KTLoadingView_Example/Pods-KTLoadingView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DC4A92AD4C1433B0B49D7B92 /* KTLoadingView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = KTLoadingView.podspec; path = ../KTLoadingView.podspec; sourceTree = "<group>"; };
-		E4283308973B5922F05008CD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		DC4A92AD4C1433B0B49D7B92 /* KTLoadingView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KTLoadingView.podspec; path = ../KTLoadingView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E4283308973B5922F05008CD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
