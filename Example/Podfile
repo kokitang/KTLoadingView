@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KTLoadingView_Example' do
+  pod 'KTLoadingView', :path => '../'
+
+  target 'KTLoadingView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
