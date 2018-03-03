@@ -16,7 +16,7 @@ let kScreenHeight = UIScreen.main.bounds.height
 let kScreenRect = UIScreen.main.bounds
 let kWindowRect = UIApplication.shared.keyWindow?.bounds
 
-class KTLoadingView: UIView {
+public class KTLoadingView: UIView {
     
     /*
      Defines the style of LoadingView.
@@ -27,7 +27,7 @@ class KTLoadingView: UIView {
      
      !!If containerView != nil, screen means containerView.!!
      */
-    enum SizeStyle {
+    public enum SizeStyle {
         case fullScreen
         case center(CGSize)
         case custom(CGRect)
@@ -36,57 +36,51 @@ class KTLoadingView: UIView {
             self = .fullScreen
         }
     }
-    static let shared = KTLoadingView.init()
+    public static let shared = KTLoadingView.init()
     public private(set) var containerView: UIView? = nil
-    let background = UIVisualEffectView.init(effect: UIBlurEffect.init(style: UIBlurEffectStyle.dark))
-    let label = KTLoadingLabel.init()
-    private let centerView = UIView.init()
-    private let activityIndicator: NVActivityIndicatorView = NVActivityIndicatorView.init(frame: .zero)
+    public let label = KTLoadingLabel.init()
     public private(set) var type: NVActivityIndicatorType = .lineScalePulseOut {
         didSet {
             activityIndicator.type = type
         }
     }
-    var textSize: CGFloat = 16 {
+    public var textSize: CGFloat = 16 {
         didSet {
             label.font = label.font.withSize(textSize)
         }
     }
-    var textFont: UIFont! = UIFont.init(name: "SetoFont", size: 16) ?? UIFont.systemFont(ofSize: UIFont.labelFontSize) {
+    public var textFont: UIFont! = UIFont.init(name: "SetoFont", size: 16) ?? UIFont.systemFont(ofSize: UIFont.labelFontSize) {
         didSet {
             label.font = textFont
         }
     }
-    var text: String = "" {
+    public var text: String = "" {
         didSet {
             label.staticText = text
         }
     }
-    var animateText: String = "" {
+    public var animateText: String = "" {
         didSet {
             label.animateText = animateText
         }
     }
-    
-    var sizeStyle: SizeStyle = .fullScreen {
+    public var sizeStyle: SizeStyle = .fullScreen {
         didSet {
             updateSizeStyle()
         }
     }
-    
-    var textColor: UIColor = .white {
+    public var textColor: UIColor = .white {
         didSet {
             label.textColor = textColor
         }
     }
-    
-    var indicatorColor: UIColor = .white {
+    public var indicatorColor: UIColor = .white {
         didSet {
             activityIndicator.color = indicatorColor
         }
     }
     
-    private init(type: NVActivityIndicatorType = .lineScalePulseOut) {
+    init(type: NVActivityIndicatorType = .lineScalePulseOut) {
         super.init(frame: kScreenRect)
         self.type = type
         initSetup()
@@ -101,10 +95,94 @@ class KTLoadingView: UIView {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initSetup()
     }
+    
+    /*
+     Function: Show LoadingView in the top of screen
+     Parameters:
+     - container: If container is not nil, LoadingView will show inside container.
+     - text: The text shown in label.
+     - type: Type of NVActivityIndicator.
+     */
+    public class func show(in container: UIView? = nil, text: String = "", animateText: String = "", type: NVActivityIndicatorType = .lineScalePulseOut, sizeStyle: SizeStyle = .fullScreen) {
+        if container != nil {
+            shared.containerView = container
+        }
+        shared.text = text
+        shared.animateText = animateText
+        shared.sizeStyle = sizeStyle
+        shared.show()
+    }
+    
+    public class func show(text: String, animateText: String = "") {
+        KTLoadingView.show(in: nil, text: text, animateText: animateText)
+    }
+    
+    public class func show(type: NVActivityIndicatorType) {
+        KTLoadingView.show(in: nil, text: "", type: type)
+    }
+    
+    public func show() {
+        removeFromSuperview()
+        
+        if let containerView = containerView {
+            frame = containerView.bounds
+            background.frame = bounds
+            containerView.addSubview(self)
+        } else {
+            guard let window = UIApplication.shared.keyWindow else {
+                if let window = UIApplication.shared.windows.first {
+                    print("Show from first window")
+                    window.addSubview(self)
+                } else {
+                    fatalError("No window found")
+                }
+                return
+            }
+            print("Show from keyWindow")
+            window.addSubview(self)
+        }
+        updateSizeStyle()
+        label.animate()
+    }
+    
+    // MARK: Internal
+    private let background = UIVisualEffectView.init(effect: UIBlurEffect.init(style: UIBlurEffectStyle.dark))
+    private let centerView = UIView.init()
+    private let activityIndicator: NVActivityIndicatorView = NVActivityIndicatorView.init(frame: .zero)
+    
+    private func _setTypeName(_ typeName: String) {
+        for item in NVActivityIndicatorType.allTypes {
+            if String(describing: item).caseInsensitiveCompare(typeName) == ComparisonResult.orderedSame {
+                type = item
+                break
+            }
+        }
+    }
+    
+    private func getTypeName() -> String {
+        return String(describing: type)
+    }
+    
+    private func updateSizeStyle() {
+        switch sizeStyle {
+        case .center(let size):
+            if let superview = superview {
+                frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+                center = superview.center
+            }
+            
+        case .custom(let rect):
+            frame = rect
+            
+        default:
+            break
+        }
+    }
+    
     
     private func initSetup() {
         layer.masksToBounds = true
@@ -148,85 +226,6 @@ class KTLoadingView: UIView {
             if subview != background {
                 bringSubview(toFront: subview)
             }
-        }
-    }
-    
-    /*
-     Function: Show LoadingView in the top of screen
-     Parameters:
-     - container: If container is not nil, LoadingView will show inside container.
-     - text: The text shown in label.
-     - type: Type of NVActivityIndicator.
-     */
-    class func show(in container: UIView? = nil, text: String = "", animateText: String = "", type: NVActivityIndicatorType = .lineScalePulseOut, sizeStyle: SizeStyle = .init()) {
-        if container != nil {
-            shared.containerView = container
-        }
-        shared.text = text
-        shared.animateText = animateText
-        shared.sizeStyle = sizeStyle
-        shared.show()
-    }
-    
-    class func show(text: String, animateText: String = "") {
-        KTLoadingView.show(in: nil, text: text, animateText: animateText)
-    }
-    
-    class func show(type: NVActivityIndicatorType) {
-        KTLoadingView.show(in: nil, text: "", type: type)
-    }
-    
-    func show() {
-        removeFromSuperview()
-        
-        if let containerView = containerView {
-            frame = containerView.bounds
-            background.frame = bounds
-            containerView.addSubview(self)
-        } else {
-            guard let window = UIApplication.shared.keyWindow else {
-                if let window = UIApplication.shared.windows.first {
-                    print("Show from first window")
-                    window.addSubview(self)
-                } else {
-                    fatalError("No window found")
-                }
-                return
-            }
-            print("Show from keyWindow")
-            window.addSubview(self)
-        }
-        updateSizeStyle()
-        label.animate()
-    }
-    
-    // MARK: Internal
-    private func _setTypeName(_ typeName: String) {
-        for item in NVActivityIndicatorType.allTypes {
-            if String(describing: item).caseInsensitiveCompare(typeName) == ComparisonResult.orderedSame {
-                type = item
-                break
-            }
-        }
-    }
-    
-    private func getTypeName() -> String {
-        return String(describing: type)
-    }
-    
-    private func updateSizeStyle() {
-        switch sizeStyle {
-        case .center(let size):
-            if let superview = superview {
-                frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-                center = superview.center
-            }
-            
-        case .custom(let rect):
-            frame = rect
-            
-        default:
-            break
         }
     }
     
