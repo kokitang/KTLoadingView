@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		A5922520204B20C200DE77C8 /* setofont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A592251F204B20C200DE77C8 /* setofont.ttf */; };
 		A5DB9261ADC73A22821E6036 /* Pods_KTLoadingView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D42DAF7998B5E53A5F8CF3 /* Pods_KTLoadingView_Example.framework */; };
 		B24691C5D9E8DC808EFE124A /* Pods_KTLoadingView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39426ECC7E958B790949AA69 /* Pods_KTLoadingView_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		60D20253E617A5FEB0BCE249 /* Pods-KTLoadingView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTLoadingView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KTLoadingView_Tests/Pods-KTLoadingView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		96E479845C2AD17C65115EE9 /* Pods-KTLoadingView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTLoadingView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KTLoadingView_Tests/Pods-KTLoadingView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A592251F204B20C200DE77C8 /* setofont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = setofont.ttf; sourceTree = "<group>"; };
 		BB141B1158790EC88EC222A7 /* Pods-KTLoadingView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTLoadingView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-KTLoadingView_Example/Pods-KTLoadingView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BE6AD542E52FF2D86DB427B1 /* Pods-KTLoadingView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTLoadingView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KTLoadingView_Example/Pods-KTLoadingView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DC4A92AD4C1433B0B49D7B92 /* KTLoadingView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KTLoadingView.podspec; path = ../KTLoadingView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -107,6 +109,7 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A592251F204B20C200DE77C8 /* setofont.ttf */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -252,6 +255,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				A5922520204B20C200DE77C8 /* setofont.ttf in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
