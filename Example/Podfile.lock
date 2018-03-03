@@ -1,5 +1,11 @@
 PODS:
-  - KTLoadingView (0.1.0)
+  - KTLoadingLabel (1.0.1)
+  - KTLoadingView (0.1.0):
+    - KTLoadingLabel
+    - NVActivityIndicatorView
+  - NVActivityIndicatorView (4.1.1):
+    - NVActivityIndicatorView/Presenter (= 4.1.1)
+  - NVActivityIndicatorView/Presenter (4.1.1)
 
 DEPENDENCIES:
   - KTLoadingView (from `../`)
@@ -9,7 +15,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  KTLoadingView: 673d85e0e39653bb1e6e361e370d86a869ad0f80
+  KTLoadingLabel: a98268e03fb9d43f45176fc6d77fe6f3de8a6312
+  KTLoadingView: 55fbea7a0222c947f7b6f5a7822e0db6efb63725
+  NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
 
 PODFILE CHECKSUM: dcabd23b21b8b299f648278b97fb2875a742f3e2
 

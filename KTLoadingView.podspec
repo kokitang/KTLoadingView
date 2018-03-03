@@ -22,7 +22,7 @@ KTLoadingView is a nice and easy-to-use library for iOS. It is highly customizab
   s.swift_version = '4.0'
   s.frameworks = 'UIKit'
   s.dependency 'KTLoadingLabel'
-
+  s.dependency 'NVActivityIndicatorView'
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   # s.resource_bundles = {
@@ -31,3 +31,4 @@ KTLoadingView is a nice and easy-to-use library for iOS. It is highly customizab
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
 end
+
