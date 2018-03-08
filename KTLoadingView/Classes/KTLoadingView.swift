@@ -149,6 +149,27 @@ public class KTLoadingView: UIView {
         label.animate()
     }
     
+    public final class func hide(after timeInterval: TimeInterval = 0) {
+        shared.hide(after: timeInterval)
+    }
+    
+    public func hide(after timeInterval: TimeInterval = 0) {
+        if timeInterval > 0 {
+            if #available(iOS 10.0, *) {
+                let _ = Timer.init(timeInterval: timeInterval, repeats: false) { (timer) in
+                    self.removeFromSuperview()
+                }
+            } else {
+                // Fallback on earlier versions
+                DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval, execute: {
+                    self.removeFromSuperview()
+                })
+            }
+        } else {
+            removeFromSuperview()
+        }
+    }
+    
     // MARK: Internal
     private let background = UIVisualEffectView.init(effect: UIBlurEffect.init(style: UIBlurEffectStyle.dark))
     private let centerView = UIView.init()
