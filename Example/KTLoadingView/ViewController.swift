@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         KTLoadingView.show(in: view, text: "Loading", animateText: "...")
-        KTLoadingView.shared.textFont = UIFont.systemFont(ofSize: 40)
+        KTLoadingView.shared.textFont = UIFont.systemFont(ofSize: 40)        
         KTLoadingView.show() // Same as KTLoadingView.shared.show()
     }
 

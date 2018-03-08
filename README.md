@@ -10,11 +10,17 @@
 
 <br>
 
+## Intro
+
+`KTLoadingView` is a subclass of `UIView` which embedded [`KTLoadingLabel`](https://github.com/kokitang/KTLoadingLabel) and [`NVActivityIndicator`](https://github.com/ninjaprox/NVActivityIndicatorView) to provide a one-line loading view solution.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Usage
+
+#### Basic
 
 ```Swift
 import KTLoadingLabel
