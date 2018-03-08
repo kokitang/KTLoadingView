@@ -14,15 +14,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        KTLoadingView.show(in: view, text: "Loading", animateText: "...")
-        KTLoadingView.shared.textFont = UIFont.systemFont(ofSize: 40)        
-        KTLoadingView.show() // Same as KTLoadingView.shared.show()
+//        KTLoadingView.shared.textFont = UIFont.systemFont(ofSize: 40)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        KTLoadingView.show() // Same as KTLoadingView.shared.show()
+//        KTLoadingView.show(in: nil, text: "Loading", animateText: "...")
+        KTLoadingView.show(text: "Loading", animateText: "...")
     }
-
 }
 

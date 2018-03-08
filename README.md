@@ -23,10 +23,22 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 #### Basic
 
 ```Swift
-import KTLoadingLabel
+import KTLoadingView
 
 KTLoadingView.show()
 ```
+
+![](Resources/basic_show.gif)
+
+#### Basic (with text)
+
+```Swift
+import KTLoadingView
+
+KTLoadingView.show(text: "Loading", animateText: "...")
+```
+
+![](Resources/basic_show_with_text.gif)
 
 #### Customize
 
