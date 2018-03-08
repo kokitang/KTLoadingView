@@ -14,6 +14,21 @@
 
 `KTLoadingView` is a subclass of `UIView` which embedded [`KTLoadingLabel`](https://github.com/kokitang/KTLoadingLabel) and [`NVActivityIndicator`](https://github.com/ninjaprox/NVActivityIndicatorView) to provide a one-line loading view solution.
 
+## Requirements
+
+- iOS 9.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+
+- Xcode 8.3+
+- Swift 4
+
+## Installation
+
+KTLoadingView is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'KTLoadingView'
+```
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -49,7 +64,7 @@ let shared = KTLoadingView.shared
 
 // Customize
 shared.type = .pacman
-And more to discover...
+/*And more to discover...*/
 //
 
 shared.show() // or KTLoadingView.show()
@@ -64,25 +79,10 @@ let shared = KTLoadingView.shared
 shared.label.animationType = .reverse
 shared.label.stringType = .fullString
 shared.label.repeats = false
-And more to discover...
+/*And more to discover...*/
 //
 
 shared.show()
-```
-
-## Requirements
-
-- iOS 9.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+
-- Xcode 8.3+
-- Swift 4
-
-## Installation
-
-KTLoadingView is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'KTLoadingView'
 ```
 
 ## Custom Font

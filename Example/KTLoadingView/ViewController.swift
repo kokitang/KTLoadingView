@@ -14,16 +14,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        KTLoadingView.shared.textFont = UIFont.systemFont(ofSize: 40)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 //        KTLoadingView.show() // Same as KTLoadingView.shared.show()
 //        KTLoadingView.show(in: nil, text: "Loading", animateText: "...")
+        KTLoadingView.shared.textFont = UIFont.systemFont(ofSize: 40)
         KTLoadingView.show(text: "Loading", animateText: "...")
-        let shared = KTLoadingView.shared
-        
     }
 }
 
