@@ -14,6 +14,27 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Usage
+
+```Swift
+import KTLoadingLabel
+
+KTLoadingView.show()
+```
+
+#### Customize
+
+If you want to do some customization. You can get the instance of `KTLoadingView`
+
+```Swift
+let shared = KTLoadingView.shared
+
+// Customize
+...
+//
+
+shared.show() // or KTLoadingView.show()
+```
 ## Requirements
 
 - iOS 9.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+
