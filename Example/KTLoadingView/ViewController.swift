@@ -22,6 +22,8 @@ class ViewController: UIViewController {
 //        KTLoadingView.show() // Same as KTLoadingView.shared.show()
 //        KTLoadingView.show(in: nil, text: "Loading", animateText: "...")
         KTLoadingView.show(text: "Loading", animateText: "...")
+        let shared = KTLoadingView.shared
+        
     }
 }
 

@@ -48,11 +48,28 @@ If you want to do some customization. You can get the instance of `KTLoadingView
 let shared = KTLoadingView.shared
 
 // Customize
-...
+shared.type = .pacman
+And more to discover...
 //
 
 shared.show() // or KTLoadingView.show()
 ```
+
+You can also customize the  [`KTLoadingLabel`](https://github.com/kokitang/KTLoadingLabel) by simply set the attributes of it.
+
+```Swift
+let shared = KTLoadingView.shared
+
+// Customize
+shared.label.animationType = .reverse
+shared.label.stringType = .fullString
+shared.label.repeats = false
+And more to discover...
+//
+
+shared.show()
+```
+
 ## Requirements
 
 - iOS 9.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+
