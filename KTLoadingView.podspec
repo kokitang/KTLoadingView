@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KTLoadingView'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'KTLoadingView is a subclass of UIView that provides animated loading page.'
   s.description      = <<-DESC
 KTLoadingView is a nice and easy-to-use library for iOS. It is highly customizable and userfriendly. Works perfectly on anywhere in your app by just one line of code to provide awesome loading view.
